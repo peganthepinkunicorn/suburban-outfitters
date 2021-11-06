@@ -1,0 +1,89 @@
+body {
+      display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  font: 400 15px Lato, sans-serif;
+      line-height: 1.8;
+      color: #818181;
+	  height: 100%;
+	  width: 100%;
+  }
+  
+  .logo {
+	  img{
+	  height: 150px;
+	  }
+	  }
+  
+  .login-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	size: fit content;
+	flex-direction: column;
+	border: 2px solid;
+	padding: 60px 50px;
+
+  }
+  
+  .login-buttons {
+	display: flex;
+	justify-content: center;
+  }
+  
+  .login-buttons__submit {
+	  background-color: #42f5a4;
+	  border-radius: 15px;
+	  height: 30px;
+	  width: 100px;
+	  font-size: 20px;
+	  border: none;
+  }
+  
+  .logout-button {
+	  position: absolute;
+	  top: 10px;
+	  right: 10px;
+  }
+  
+  .card-list {
+	display: flex;
+  }
+  
+  .page-header {
+	  position: absolute;
+	  top: 0px;
+	  left: 10px;
+	  margin: 0px;
+	  padding: 0px;
+  }
+  
+  .page-content {
+	  display: flex;
+	  flex-direction: column;
+  }
+  
+  .page-buttons {
+	  display: grid;
+	  grid-template-columns: auto auto;
+	  grid-gap: 10px;
+	  padding: 10px;
+	  align-content: space-evenly;
+	  justify-content: center;
+  }
+  
+  .card-detail {
+	  display: flex;
+	  flex-direction: column;
+	  height: auto;
+	  width: auto;
+	  justify-content: center;
+	  align-items: center;
+	  font-size: 24px;
+	  padding: 0px;
+	  margin: 0px;
+  }
+  
+  .bg-grey {
+      background-color: #f6f6f6;
+  }
