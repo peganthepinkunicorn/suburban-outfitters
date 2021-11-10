@@ -9,12 +9,10 @@ echo <<<_END
 
 <body>
 	<div class='page-content'>
-		<div class='logo'>
-			<img src='logo.png'></img>
-		</div>
+		<a class="logo"></a>
 		<div class="login-container bg-grey">
 				<h1>Login</h1>
-				<form method="POST" action="">
+				<form method="POST" action="home.php">
 							Username: <br>
 							<input type='text' name='username'><br><br>
 							Password: <br>
