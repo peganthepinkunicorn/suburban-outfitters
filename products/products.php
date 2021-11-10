@@ -1,7 +1,7 @@
 <html>
 
 	<head>
-		<link rel='stylesheet' href='styles.css'>
+		<link rel='../stylesheet' href='styles.css'>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -9,7 +9,7 @@
 	
 	<body>
 		<div class='logout-button'>
-			<a href='login.php'><img src='button_logout.png'></img></a>
+			<a href='../login/login.php'><img src='../logout-button.png'></img></a>
 		</div>
 		<div='page-content'>
 			<nav class="navbar navbar-default">
