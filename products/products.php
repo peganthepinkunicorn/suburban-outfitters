@@ -52,21 +52,21 @@
 						<!--Product 1-->
 						<div class='product-detail'>
 							<a href='../product1/product1.php'><img src='../images/product1.jpg' class='product-thumbnail'></img></a>
-							<a href='../product1/product1.php'>Product 1</a>
+							<a href='../product1/product1.php'>Summer Dress</a>
 							<span>1 in stock</span>
 							<span>$100.00</span>
 						</div>
 						<!--Product 2-->
 						<div class='product-detail'>
 							<a href='../product1/product1.php'><img src='../images/product2.jpg' class='product-thumbnail'></img></a>
-							<a href='../product1/product1.php'>Product 2</a>
+							<a href='../product1/product1.php'>Slacks</a>
 							<span>3 in stock</span>
 							<span>$100.00</span>
 						</div>
 						<!--Product 3-->
 						<div class='product-detail'>
 							<a href='../product1/product1.php'><img src='../images/product3.jpg' class='product-thumbnail'></img></a>
-							<a href='../product1/product1.php'>Product 3</a>
+							<a href='../product1/product1.php'>Scarf</a>
 							<span>2 in stock</span>
 							<span>$100.00</span>
 						</div>

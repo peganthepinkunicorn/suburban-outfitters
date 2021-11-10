@@ -26,7 +26,7 @@
 					</div>
 				</div>
 			</nav>
-			<h3>Welcome Customer First Last</h3>
+			<h3>Welcome, First Last!</h3>
 			<div class='account-info-grid'>
 				<span>Customer Name</span>
 				<span>First Last</span>
