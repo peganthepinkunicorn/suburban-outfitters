@@ -7,7 +7,7 @@
 <body>
 	<div class='page-content'>
 		<div class="login-container bg-grey">
-			<img src='../logo.png' style='height: 50px' ></img>
+			<img src='../logo.png' style='height: 50px; border-radius: 50%; border: 3px solid black;'></img>
 			<h1>Login</h1>
 			<form method='POST' action='../home/home.php'>
 				Username: <br>
@@ -15,10 +15,10 @@
 				Password: <br>
 				<input  type='password' name='password'><br><br>
 				<div class="login-buttons">
-				<input type='image' name='login' src='../login-button.png' style='border: 3px solid black; border-radius: 12px;'/>
+				<input type='image' name='login' src='../log-in-button.png'/>
 				</div>
 			</form>
-			<a href=''><img src='..//sign-up-button.png' style='border: 3px solid black; border-radius: 12px;'></img></a>
+			<a href=''><img src='..//signup-button.png'></img></a>
 		</div>
 	</div>
 </body>
