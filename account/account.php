@@ -26,6 +26,17 @@
 					</div>
 				</div>
 			</nav>
+			<h3>Welcome Customer First Last</h3>
+			<div class='account-info-grid'>
+				<span>Customer Name</span>
+				<span>First Last</span>
+				<span>Address</span>
+				<span>123 Main Street, Salt Lake City, Utah 84111</span>
+				<span>Saved Payment Method</span>
+				<span>Visa -1234</span>
+				<span><a href='../account-update/account-update.php'><img src='../images/update-info-button.png'></img></a></span>
+				<span><a href=''><img src='../images/order-history-button.png'></img></a></span>
+			</div>
 		</div>
 	</body>
 </html>
