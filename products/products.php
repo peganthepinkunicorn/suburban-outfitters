@@ -18,6 +18,7 @@
 							<li><a href='../home/home.php'>Home</a></li>
 							<li><a href='../products/products.php'>Products</a></li>
 							<li><a href=''>Sales</a></li>
+							<li><a href=''>Account</a></li>
 							<li><a href='../login/login.php'>Logout</a></li>
 						</ul>
 					</div>
@@ -48,18 +49,21 @@
 					<div class='product-list'>
 						<!--Product 1-->
 						<div class='product-detail'>
-							<a href class=''><img src='..//kitty1.jfif' style='height: 100px'></img></a>
-							<a href=''>Product 1</a>
+							<a href='../product1/product1.php'><img src='..//kitty1.jfif' style='height: 100px'></img></a>
+							<a href='../product1/product1.php'>Product 1</a>
+							<span>1 in stock</span>
 						</div>
 						<!--Product 2-->
 						<div class='product-detail'>
-							<a href class=''><img src='..//kitty2.jfif' style='height: 100px'></img></a>
-							<a href=''>Product 2</a>
+							<a href='../product1/product1.php'><img src='..//kitty2.jfif' style='height: 100px'></img></a>
+							<a href='../product1/product1.php'>Product 2</a>
+							<span>3 in stock</span>
 						</div>
 						<!--Product 3-->
 						<div class='product-detail'>
-							<a href class=''><img src='..//kitty3.jfif' style='height: 100px'></img></a>
-							<a href=''>Product 3</a>
+							<a href='../product1/product1.php'><img src='..//kitty3.jfif' style='height: 100px'></img></a>
+							<a href=''../product1/product1.php>Product 3</a>
+							<span>2 in stock</span>
 						</div>
 					</div>
 			</div>

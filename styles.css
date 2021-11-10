@@ -37,16 +37,7 @@ body {
 	flex-direction: column;
 	height: 100%;
 }
-  
-.page-buttons {
-	display: grid;
-	grid-template-columns: auto auto;
-	grid-gap: 10px;
-	padding: 10px;
-	align-content: space-evenly;
-	justify-content: center;
-}
-  
+
  .bg-grey {
 	background-color: #f6f6f6;
 }
@@ -137,21 +128,25 @@ body {
 }
 
 .product-list {
-	margin: 20px;
-	display: flex;
-	width: auto;
+	display: grid;
+	grid-template-columns: auto auto auto;
+	grid-gap: 10px;
 	padding: 10px;
+	justify-content: space-evenly;
 }
-
+  
 .product-detail {
 	display: flex;
 	flex-direction: column;
-	align-content: center;
-	height: auto;
-	width: auto;
-	font-size: 16px;
-	padding: 0px;
+	font-size: 14px;
 	margin: 10px;
+	align-content: center;
+}
+
+.product-image{
+	display: flex;
+	justify-content: center;
+	height: 300px
 }
 
 .filter-container {

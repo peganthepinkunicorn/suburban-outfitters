@@ -18,6 +18,7 @@
 							<li><a href='../home/home.php'>Home</a></li>
 							<li><a href='../products/products.php'>Products</a></li>
 							<li><a href=''>Sales</a></li>
+							<li><a href=''>Account</a></li>
 							<li><a href='../login/login.php'>Logout</a></li>
 						</ul>
 					</div>
