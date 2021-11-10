@@ -26,7 +26,7 @@
 			</nav>
 				<!-- Portfolio -->
 				<div id="portfolio" class="container-fluid text-center">
-					<h2>Offers & Promotions</h2>
+					<h3>Offers & Promotions</h3>
 					<div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
 						<!-- Indicators -->
 						<ol class="carousel-indicators">
@@ -38,15 +38,15 @@
 						<!-- Wrapper for slides -->
 						<div class="carousel-inner" role="listbox">
 							<div class="item active">
-								<h4><a href=''>Holiday Promotions</a></h4>
+								<h3><a href=''>Holiday Promotions</a></h3>
 								<a href=''><img src='../kitty3.jfif'></img></a>
 							</div>
 							<div class="item">
-								<h4><a href=''>Buy 2 Get 1 Sale</a></h4>
+								<h3><a href=''>Buy 2 Get 1 Sale</a></h3>
 								<a href=''><img src='../kitty2.jfif' ></img></a>
 							</div>
 							<div class="item">
-								<h4><a href=''>40% off End of Summer Sale</a></h4>
+								<h3><a href=''>40% off End of Summer Sale</a></h3>
 								<a href=''><img src='../kitty1.jfif' ></img></a>
 							</div>
 						</div>

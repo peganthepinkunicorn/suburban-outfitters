@@ -15,9 +15,10 @@
 				Password: <br>
 				<input  type='password' name='password'><br><br>
 				<div class="login-buttons">
-				<input type='image' name='submit' src='../login-button.png'/>
+				<input type='image' name='login' src='../login-button.png'/>
 				</div>
 			</form>
+			<a href=''><img src='..//sign-up-button.png'></img></a>
 		</div>
 	</div>
 </body>

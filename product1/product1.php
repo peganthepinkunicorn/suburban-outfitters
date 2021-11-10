@@ -1,9 +1,7 @@
 <html>
 	<head>
 		<link rel='stylesheet' href='..//styles.css'>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	</head>
 	<body>
 		<div class='page-content'>
@@ -22,11 +20,26 @@
 					</div>
 				</div>
 			</nav>
-			<h1>Product 1</h1>
-			<div class='product-image'>
-				<img src='..//kitty1.jfif' style='height: 100%'></img>
+			<div class='product-container'>
+				<div class='product-detail'>
+					<div class='product-image'>
+						<img src='..//kitty1.jfif' style='height: 100%'></img>
+					</div>				
+				</div>
+				<form class='product-detail-form' method='POST' action=''>
+					<span>1 in stock</span>
+					<span>Category: Dress</span>
+					<h3>Select size</h3>
+						<span>Small <input type='radio' name='size'/></span>
+						<span>Medium <input type='radio' name='size'/></span>
+						<span>Large <input type='radio' name='size'/></span>
+					<h3>Select color</h3>
+						<span>Black <input type='radio' name='color'/></span>
+						<span>White <input type='radio' name='color'/></span>
+						<span>Gray <input type='radio' name='color'/></span>
+					<input type='submit' name='add-to-bag' value='Add to Bag'/>
+				</form>
 			</div>
-			<span>1 item in stock</span>
 		</div>
 	</body>
 </html>
