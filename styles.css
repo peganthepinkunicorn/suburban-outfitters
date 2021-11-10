@@ -33,15 +33,6 @@ body {
 	justify-content: center;
 }
   
-.login-buttons__submit {
-	background-color: #42f5a4;
-	border-radius: 15px;
-	height: 30px;
-	width: 100px;
-	font-size: 20px;
-	border: none;
-}
-  
 .logout-button {
 	position: absolute;
 	top: 10px;
