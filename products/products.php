@@ -13,7 +13,7 @@
 			<nav class="navbar navbar-default">
 				<div class="container">
 					<div class="collapse navbar-collapse" id="myNavbar">
-						<img src='..//images/logo.png' class='logo-round'></img>
+						<img src='../images/logo.png' class='logo-round'></img>
 						<ul class='nav navbar-nav navbar-right'>
 							<li><a href='../home/home.php'>Home</a></li>
 							<li><a href='../products/products.php'>Products</a></li>
@@ -51,22 +51,22 @@
 					<div class='product-list'>
 						<!--Product 1-->
 						<div class='product-detail'>
-							<a href='../product1/product1.php'><img src='..//images/product1.jpg' class='product-thumbnail'></img></a>
+							<a href='../product1/product1.php'><img src='../images/product1.jpg' class='product-thumbnail'></img></a>
 							<a href='../product1/product1.php'>Product 1</a>
 							<span>1 in stock</span>
 							<span>$100.00</span>
 						</div>
 						<!--Product 2-->
 						<div class='product-detail'>
-							<a href='../product1/product1.php'><img src='..//images/product2.jpg' class='product-thumbnail'></img></a>
+							<a href='../product1/product1.php'><img src='../images/product2.jpg' class='product-thumbnail'></img></a>
 							<a href='../product1/product1.php'>Product 2</a>
 							<span>3 in stock</span>
 							<span>$100.00</span>
 						</div>
 						<!--Product 3-->
 						<div class='product-detail'>
-							<a href='../product1/product1.php'><img src='..//images/product3.jpg' class='product-thumbnail'></img></a>
-							<a href=''../product1/product1.php>Product 3</a>
+							<a href='../product1/product1.php'><img src='../images/product3.jpg' class='product-thumbnail'></img></a>
+							<a href='../product1/product1.php'>Product 3</a>
 							<span>2 in stock</span>
 							<span>$100.00</span>
 						</div>

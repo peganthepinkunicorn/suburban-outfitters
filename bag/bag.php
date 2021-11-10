@@ -13,7 +13,7 @@
 			<nav class="navbar navbar-default">
 				<div class="container">
 					<div class="collapse navbar-collapse" id="myNavbar">
-						<img src='..//images/logo.png' class='logo-round'></img>
+						<img src='../images/logo.png' class='logo-round'></img>
 						<ul class='nav navbar-nav navbar-right'>
 							<li><a href='../home/home.php'>Home</a></li>
 							<li><a href='../products/products.php'>Products</a></li>
@@ -29,9 +29,9 @@
 			
 			<div class='page-content'>
 				<div class='product-list'>
-					<img src='..//images/product1.jpg' class='product-thumbnail'></img>
+					<img src='../images/product1.jpg' class='product-thumbnail'></img>
 				</div>
-				<form method='POST' action='..//checkout/checkout.php'>
+				<form method='POST' action='../order-confirmation/order-confirmation.php'>
 					<input type='submit' name='checkout' value='Checkout'/>
 				</form>
 			</div>

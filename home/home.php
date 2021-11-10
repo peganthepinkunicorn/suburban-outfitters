@@ -13,7 +13,7 @@
 			<nav class="navbar navbar-default">
 				<div class="container">
 					<div class="collapse navbar-collapse" id="myNavbar">
-						<img src='..//images/logo.png' class='logo-round'></img>
+						<img src='../images/logo.png' class='logo-round'></img>
 						<ul class='nav navbar-nav navbar-right'>
 							<li><a href='../home/home.php'>Home</a></li>
 							<li><a href='../products/products.php'>Products</a></li>
@@ -40,13 +40,13 @@
 						<!-- Wrapper for slides -->
 						<div class="carousel-inner" role="listbox">
 							<div class="item active">
-								<a href=''><img src='..//images/promo-hol.png'></img></a>
+								<a href=''><img src='../images/promo-hol.png'></img></a>
 							</div>
 							<div class="item">
-								<a href=''><img src='..//images/promo-spec.jfif'></img></a>
+								<a href=''><img src='../images/promo-spec.jfif'></img></a>
 							</div>
 							<div class="item">
-								<a href=''><img src='..//images/promo-eos.jfif' ></img></a>
+								<a href=''><img src='../images/promo-eos.jfif' ></img></a>
 							</div>
 						</div>
 
