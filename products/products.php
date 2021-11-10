@@ -50,19 +50,19 @@
 					<div class='product-list'>
 						<!--Product 1-->
 						<div class='product-detail'>
-							<a href='../product1/product1.php'><img src='..//kitty1.jfif' style='height: 100px'></img></a>
+							<a href='../product1/product1.php'><img src='..//product1.jpg' style='height: 100px'></img></a>
 							<a href='../product1/product1.php'>Product 1</a>
 							<span>1 in stock</span>
 						</div>
 						<!--Product 2-->
 						<div class='product-detail'>
-							<a href='../product1/product1.php'><img src='..//kitty2.jfif' style='height: 100px'></img></a>
+							<a href='../product1/product1.php'><img src='..//product2.jpg' style='height: 100px'></img></a>
 							<a href='../product1/product1.php'>Product 2</a>
 							<span>3 in stock</span>
 						</div>
 						<!--Product 3-->
 						<div class='product-detail'>
-							<a href='../product1/product1.php'><img src='..//kitty3.jfif' style='height: 100px'></img></a>
+							<a href='../product1/product1.php'><img src='..//product3.jpg' style='height: 100px'></img></a>
 							<a href=''../product1/product1.php>Product 3</a>
 							<span>2 in stock</span>
 						</div>

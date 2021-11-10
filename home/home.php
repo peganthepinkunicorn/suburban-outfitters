@@ -39,16 +39,13 @@
 						<!-- Wrapper for slides -->
 						<div class="carousel-inner" role="listbox">
 							<div class="item active">
-								<a href=''><h3>Holiday Promotions</h3></a>
-								<a href=''><img src='../kitty3.jfif'></img></a>
+								<a href=''><img src='../promo-hol.png'></img></a>
 							</div>
 							<div class="item">
-								<h3><a href=''>Buy 2 Get 1 Sale</a></h3>
-								<a href=''><img src='../kitty2.jfif' ></img></a>
+								<a href=''><img src='../promo-spec.jfif'></img></a>
 							</div>
 							<div class="item">
-								<h3><a href=''>40% off End of Summer Sale</a></h3>
-								<a href=''><img src='../kitty1.jfif' ></img></a>
+								<a href=''><img src='../promo-eos.jfif' ></img></a>
 							</div>
 						</div>
 

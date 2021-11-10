@@ -24,7 +24,7 @@
 			<div class='product-container'>
 				<div class='product-detail'>
 					<div class='product-image'>
-						<img src='..//kitty1.jfif' style='height: 100%'></img>
+						<img src='..//product1.jpg' style='height: 100%'></img>
 					</div>				
 				</div>
 				<form class='product-detail-form' method='POST' action=''>
