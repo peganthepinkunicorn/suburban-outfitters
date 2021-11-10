@@ -16,6 +16,7 @@
 							<li><a href=''>Sales</a></li>
 							<li><a href=''>Account</a></li>
 							<li><a href='../login/login.php'>Logout</a></li>
+							<li><a href=''>Bag</a></li>
 						</ul>
 					</div>
 				</div>

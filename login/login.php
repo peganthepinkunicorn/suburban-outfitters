@@ -15,10 +15,10 @@
 				Password: <br>
 				<input  type='password' name='password'><br><br>
 				<div class="login-buttons">
-				<input type='image' name='login' src='../login-button.png'/>
+				<input type='image' name='login' src='../login-button.png' style='border: 3px solid black; border-radius: 12px;'/>
 				</div>
 			</form>
-			<a href=''><img src='..//sign-up-button.png'></img></a>
+			<a href=''><img src='..//sign-up-button.png' style='border: 3px solid black; border-radius: 12px;'></img></a>
 		</div>
 	</div>
 </body>
