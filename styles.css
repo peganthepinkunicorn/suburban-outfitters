@@ -9,15 +9,6 @@ body {
 	  width: 100%;
 }
 
-.logo {
-	background: url("logo.png");
-	background-repeat: no-repeat;
-	background-size: contain;
-	background-position: center;
-	margin: 10px;
-	height: 150px;
-}
-
 .login-container {
 	display: flex;
 	justify-content: center;
@@ -32,17 +23,7 @@ body {
 	display: flex;
 	justify-content: center;
 }
-  
-.logout-button {
-	position: absolute;
-	top: 10px;
-	right: 10px;
-}
-  
-.card-list {
-	display: flex;
-}
-  
+
 .page-header {
 	position: absolute;
 	top: 0px;
@@ -54,6 +35,7 @@ body {
 .page-content {
 	display: flex;
 	flex-direction: column;
+	height: 100%;
 }
   
 .page-buttons {
@@ -65,25 +47,25 @@ body {
 	justify-content: center;
 }
   
-.card-detail {
-	display: flex;
-	flex-direction: column;
-	height: auto;
-	width: auto;
-	justify-content: center;
-	align-items: center;
-	font-size: 24px;
-	padding: 0px;
-	margin: 0px;
-}
-  
  .bg-grey {
 	background-color: #f6f6f6;
+}
+
+.carousel {
+	height: 550px;
+	width: 800px;
+}
+
+.item {
+	width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
 }
   
 .carousel-control.right, .carousel-control.left {
 	background-image: none;
-    color: #f4511e;
+    color: black;
 }
 .carousel-indicators li {
     border-color: #f4511e;
@@ -96,7 +78,33 @@ body {
     padding: 60px 50px;
 }
 
-.navbar {
+.search-bar {
+	margin-bottom: 0;
+	z-index: 9999;
+	font-size: 12px !important;
+	line-height: 1.42857143 !important;
+	letter-spacing: 4px;
+	border-radius: 0;
+	font-family: Montserrat, sans-serif;
+	position: absolute;
+	top:10px;
+}
+
+.search-button {
+	height: 20px;
+	margin-bottom: 0;
+	z-index: 9999;
+	border: none;
+	font-size: 12px !important;
+	line-height: 1.42857143 !important;
+	letter-spacing: 4px;
+	border-radius: 0;
+	font-family: Montserrat, sans-serif;
+	position: absolute;
+	top: 2px;
+}
+
+.navbar{
 	margin-bottom: 0;
 	background-color: #abb7b8;
 	z-index: 9999;
@@ -107,10 +115,10 @@ body {
 	border-radius: 0;
 	font-family: Montserrat, sans-serif;
 	position: absolute;
-	top:10px;
+	top: 10px;
 }
   
-.navbar li a, .navbar .navbar-brand {
+.navbar li a, .navbar {
 	color: gray !important;
 }
 .navbar-nav li a:hover, .navbar-nav li.active a {
@@ -123,9 +131,35 @@ body {
 	color: #fff !important;
 }
 
-.filter {
-	border: 0px solid;
-	background-color: #abb7b8;
+.product-container{
+	display: flex;
+	justify-content: left;
+}
+
+.product-list {
+	margin: 20px;
+	display: flex;
+	width: auto;
+	padding: 10px;
+}
+
+.product-detail {
 	display: flex;
 	flex-direction: column;
+	align-content: center;
+	height: auto;
+	width: auto;
+	font-size: 16px;
+	padding: 0px;
+	margin: 10px;
+}
+
+.filter-container {
+	background-color: #f6f6f6;
+	width: 150px;
+	display: flex;
+	flex-direction: column;
+	justify-content: left;
+	padding: 10px;
+	margin: 20px;
 }
