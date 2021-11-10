@@ -14,6 +14,30 @@ h3 {
 	font-family: Montserrat, sans-serif;
 }
 
+a {
+	text-decorations: none;
+}
+
+/*unvisited link*/
+a:link{
+	color: black;
+}
+
+/*visited link*/
+a:visited{
+	color: black;
+}
+
+/*mouse over link*/
+a:hover{
+	color: #fcb5a6;
+}
+
+/*selected link */
+a:active{
+	color: #FCB5A6;
+}
+
 .login-container {
 	display: flex;
 	justify-content: center;
@@ -66,7 +90,7 @@ h3 {
   
 .carousel-control.right, .carousel-control.left {
 	background-image: none;
-    color: black;
+    color: #7FB2F0;
 }
 .carousel-indicators li {
     border-color: #FCB5A6;
@@ -97,7 +121,7 @@ h3 {
 	color: gray !important;
 }
 .navbar-nav li a:hover, .navbar-nav li.active a {
-	color: black !important;
+	color: #7FB2F0 !important;
 	background-color: #fff !important;
  }
  

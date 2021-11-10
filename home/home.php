@@ -38,7 +38,7 @@
 						<!-- Wrapper for slides -->
 						<div class="carousel-inner" role="listbox">
 							<div class="item active">
-								<h3><a href=''>Holiday Promotions</a></h3>
+								<a href=''><h3>Holiday Promotions</h3></a>
 								<a href=''><img src='../kitty3.jfif'></img></a>
 							</div>
 							<div class="item">
