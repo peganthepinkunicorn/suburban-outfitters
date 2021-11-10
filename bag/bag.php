@@ -55,7 +55,7 @@
 					<span>Credit Card Number:</span><span><input type='number' name='credit-card' value='yyyy-mm'/></span>
 					<span>Expiration Date:</span><span><input type='date' name='expiration-date'></span>
 					<span>Name on Card:</span><span><input type='text' name='customer-name'/></span>
-					<span></span><span><input type='submit' name='checkout' value='Checkout'/></span>
+					<span></span><span><input type='image' name='checkout' src='../images/button_checkout.png'/></span>
 				</form>
 			</div>
 			
