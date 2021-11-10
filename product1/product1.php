@@ -44,7 +44,7 @@
 						<span>Black <input type='radio' name='color'/></span>
 						<span>White <input type='radio' name='color'/></span>
 						<span>Gray <input type='radio' name='color'/></span>
-					<input type='submit' name='add-to-bag' value='Add to Bag'/>
+					<input type='image' name='add-to-bag' src='../images/button_add-to-bag.png' style='width: 75px; display: flex; justify-content: center;'/>
 				</form>
 			</div>
 		</div>
