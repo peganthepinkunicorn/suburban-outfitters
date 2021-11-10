@@ -186,3 +186,21 @@ a:active{
 	padding: 10px;
 	margin: 10px;
 }
+
+.bag-list {
+	display: grid;
+	grid-template-columns: auto auto auto auto auto auto;
+	grid-gap: 5px;
+	padding: 5px;
+	justify-content: space-evenly;
+}
+
+.checkout {
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-gap: 10px;
+	padding: 10px;
+	margin: 10px;
+	flex-direction: column;
+	justify-content: right;	
+}

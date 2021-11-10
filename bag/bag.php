@@ -28,11 +28,26 @@
 			</nav>
 			
 			<div class='page-content'>
-				<div class='product-list'>
+				<div class='bag-list'>
+					<!--list header-->
+					<span></span>
+					<h4>Size</h4>
+					<h4>Color</h4>
+					<h4>Quantity</h4>
+					<h4>Promotion</h4>
+					<h4>Line Total</h4>
 					<img src='../images/product1.jpg' class='product-thumbnail'></img>
+					<span>Medium</span>
+					<span>White</span>
+					<span>1</span>
+					<span>50% off EOSS</span>
+					<span>$50</span>
 				</div>
-				<form method='POST' action='../order-confirmation/order-confirmation.php'>
-					<input type='submit' name='checkout' value='Checkout'/>
+				<form method='POST' action='../order-confirmation/order-confirmation.php' class='checkout'>
+					<span>Credit Card Number:</span><span><input type='number' name='credit-card'/></span>
+					<span>Expiration Date:</span><span><input type='date' name='expiration-date'></span>
+					<span>Name on Card:</span><span><input type='text' name='customer-name'/></span>
+					<span></span><span><input type='submit' name='checkout' value='Checkout'/></span>
 				</form>
 			</div>
 			

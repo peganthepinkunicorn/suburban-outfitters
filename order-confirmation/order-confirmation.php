@@ -26,6 +26,12 @@
 					</div>
 				</div>
 			</nav>
+			
+			<h3>Congratulations! Your order has been confirmed.</h3>
+			<h4>Order number: 0001</h4>
+			<span>Date: today</span>
+			<span>Total Price</span>
+			
 		</div>
 	</body>
 </html>
