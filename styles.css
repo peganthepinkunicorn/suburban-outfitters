@@ -204,3 +204,28 @@ a:active{
 	flex-direction: column;
 	justify-content: right;	
 }
+
+.bag-footer {
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-gap: 10px;
+	padding: 10px;
+	margin: 10px;
+	flex-direction: column;
+	justify-content: right;	
+}
+
+.order-conf-header {
+	display: flex;
+	align-content: center;
+	justify-content: center;
+}
+
+.order-detail {
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-gap: 10px;
+	margin: 10px;
+	flex-direction: column;
+	justify-content: center;	
+}

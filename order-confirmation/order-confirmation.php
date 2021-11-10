@@ -26,12 +26,24 @@
 					</div>
 				</div>
 			</nav>
-			
-			<h3>Congratulations! Your order has been confirmed.</h3>
-			<h4>Order number: 0001</h4>
-			<span>Date: today</span>
-			<span>Total Price</span>
-			
+			<div class='order-conf-header'>
+				<h3>Congratulations! Your order has been confirmed.</h3>
+				<img src='../images/congrat.png' style='height: 100px;'>
+			</div>
+			<div class='order-detail'>
+				<span>Order#:</span>
+				<span>00001</span>
+				<span>Name on Order</span>
+				<span>First Last</span>
+				<span>Customer Address:</span>
+				<span>123 Main Street, Salt Lake City, UT 84111</span>
+				<span>Date:</span>
+				<span>November 10th, 2021</span>
+				<span>Total Price:</span>
+				<span>$50</span>
+				<span>Payment Method:</span>
+				<span>Visa -1234</span>
+			</div>
 		</div>
 	</body>
 </html>

@@ -43,6 +43,14 @@
 					<span>50% off EOSS</span>
 					<span>$50</span>
 				</div>
+				<div class='bag-footer'>
+					<span>Order Sub-Total</span>
+					<span>$100</span>
+					<span>Discounts Applied:</span>
+					<span>-$50</span>
+					<span>Order Total</span>
+					<span>$50</span>
+				</div>
 				<form method='POST' action='../order-confirmation/order-confirmation.php' class='checkout'>
 					<span>Credit Card Number:</span><span><input type='number' name='credit-card'/></span>
 					<span>Expiration Date:</span><span><input type='date' name='expiration-date'></span>
