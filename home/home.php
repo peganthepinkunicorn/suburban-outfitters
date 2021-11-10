@@ -18,10 +18,10 @@
 							<li><a href='../home/home.php'>Home</a></li>
 							<li><a href='../products/products.php'>Products</a></li>
 							<li><a href=''>Sales</a></li>
-							<li><a href=''>Account</a></li>
+							<li><a href='../account/account.php'>Account</a></li>
 							<li><a href=''>Contact Us</a></li>
 							<li><a href='../login/login.php'>Logout</a></li>
-							<li><a href=''>Bag</a></li>
+							<li><a href='../bag/bag.php'>Bag</a></li>
 						</ul>
 					</div>
 				</div>

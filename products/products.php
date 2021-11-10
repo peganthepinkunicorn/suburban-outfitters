@@ -18,10 +18,10 @@
 							<li><a href='../home/home.php'>Home</a></li>
 							<li><a href='../products/products.php'>Products</a></li>
 							<li><a href=''>Sales</a></li>
-							<li><a href=''>Account</a></li>
+							<li><a href='../account/account.php'>Account</a></li>
 							<li><a href=''>Contact Us</a></li>
 							<li><a href='../login/login.php'>Logout</a></li>
-							<li><a href=''>Bag</a></li>
+							<li><a href='../bag/bag.php'>Bag</a></li>
 						</ul>
 					</div>
 				</div>
@@ -51,21 +51,24 @@
 					<div class='product-list'>
 						<!--Product 1-->
 						<div class='product-detail'>
-							<a href='../product1/product1.php'><img src='..//images/product1.jpg' style='height: 100px'></img></a>
+							<a href='../product1/product1.php'><img src='..//images/product1.jpg' class='product-thumbnail'></img></a>
 							<a href='../product1/product1.php'>Product 1</a>
 							<span>1 in stock</span>
+							<span>$100.00</span>
 						</div>
 						<!--Product 2-->
 						<div class='product-detail'>
-							<a href='../product1/product1.php'><img src='..//images/product2.jpg' style='height: 100px'></img></a>
+							<a href='../product1/product1.php'><img src='..//images/product2.jpg' class='product-thumbnail'></img></a>
 							<a href='../product1/product1.php'>Product 2</a>
 							<span>3 in stock</span>
+							<span>$100.00</span>
 						</div>
 						<!--Product 3-->
 						<div class='product-detail'>
-							<a href='../product1/product1.php'><img src='..//images/product3.jpg' style='height: 100px'></img></a>
+							<a href='../product1/product1.php'><img src='..//images/product3.jpg' class='product-thumbnail'></img></a>
 							<a href=''../product1/product1.php>Product 3</a>
 							<span>2 in stock</span>
+							<span>$100.00</span>
 						</div>
 					</div>
 			</div>

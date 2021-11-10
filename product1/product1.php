@@ -14,10 +14,10 @@
 							<li><a href='../home/home.php'>Home</a></li>
 							<li><a href='../products/products.php'>Products</a></li>
 							<li><a href=''>Sales</a></li>
-							<li><a href=''>Account</a></li>
+							<li><a href='../account/account.php'>Account</a></li>
 							<li><a href=''>Contact Us</a></li>
 							<li><a href='../login/login.php'>Logout</a></li>
-							<li><a href=''>Bag</a></li>
+							<li><a href='../bag/bag.php'>Bag</a></li>
 						</ul>
 					</div>
 				</div>
@@ -28,9 +28,14 @@
 						<img src='..//images/product1.jpg' style='height: 100%'></img>
 					</div>				
 				</div>
-				<form class='product-detail-form' method='POST' action=''>
+				<form class='product-detail-form' method='POST' action='../bag/bag.php'>
+				
 					<span>1 in stock</span>
-					<span>Category: Dress</span>
+					<span>$100.00</span>
+					<span>Type: Dress</span>
+					<span>Available Promotion:</span>
+					<span style='color: purple'>End of Summer Sale 50% off</span>
+					
 					<h3>Select size</h3>
 						<span>Small <input type='radio' name='size'/></span>
 						<span>Medium <input type='radio' name='size'/></span>

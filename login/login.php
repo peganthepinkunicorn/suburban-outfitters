@@ -18,7 +18,7 @@
 				<input type='image' name='login' src='..//images/log-in-button.png'/>
 				</div>
 			</form>
-			<a href=''><img src='..//images/signup-button.png'></img></a>
+			<a href='../account/account.php'><img src='..//images/signup-button.png'></img></a>
 		</div>
 	</div>
 </body>

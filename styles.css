@@ -142,6 +142,10 @@ a:active{
 	justify-content: left;
 }
 
+.product-thumbnail {
+	height: 100px;
+}
+
 .product-list {
 	display: grid;
 	grid-template-columns: auto auto auto;
