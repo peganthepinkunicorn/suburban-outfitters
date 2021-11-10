@@ -13,7 +13,7 @@
 			<nav class="navbar navbar-default">
 				<div class="container">
 					<div class="collapse navbar-collapse" id="myNavbar">
-						<img src='../logo.png' style='height: 50px; border-radius: 50%; border: 3px solid black;'></img>
+						<img src='../logo.png' class='logo-round'></img>
 						<ul class='nav navbar-nav navbar-right'>
 							<li><a href='../home/home.php'>Home</a></li>
 							<li><a href='../products/products.php'>Products</a></li>

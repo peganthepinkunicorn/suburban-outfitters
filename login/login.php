@@ -7,7 +7,7 @@
 <body>
 	<div class='page-content'>
 		<div class="login-container bg-grey">
-			<img src='../logo.png' style='height: 50px; border-radius: 50%; border: 3px solid black;'></img>
+			<img src='../logo.png' class='logo-round'></img>
 			<h1>Login</h1>
 			<form method='POST' action='../home/home.php'>
 				Username: <br>

@@ -38,6 +38,13 @@ a:active{
 	color: #FCB5A6;
 }
 
+.logo-round {
+	border: 3px solid black;
+	border-radius: 50%;
+	height: 50px;
+	object-fit: cover;
+}
+
 .login-container {
 	display: flex;
 	justify-content: center;
