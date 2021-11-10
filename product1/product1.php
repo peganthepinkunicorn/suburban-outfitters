@@ -9,7 +9,7 @@
 			<nav class="navbar navbar-default">
 				<div class="container">
 					<div class="collapse navbar-collapse" id="myNavbar">
-						<img src='../logo.png' class='logo-round'></img>
+						<img src='..//images/logo.png' class='logo-round'></img>
 						<ul class='nav navbar-nav navbar-right'>
 							<li><a href='../home/home.php'>Home</a></li>
 							<li><a href='../products/products.php'>Products</a></li>
@@ -25,7 +25,7 @@
 			<div class='product-container'>
 				<div class='product-detail'>
 					<div class='product-image'>
-						<img src='..//product1.jpg' style='height: 100%'></img>
+						<img src='..//images/product1.jpg' style='height: 100%'></img>
 					</div>				
 				</div>
 				<form class='product-detail-form' method='POST' action=''>

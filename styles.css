@@ -51,7 +51,7 @@ a:active{
 	align-items: center;
 	size: fit content;
 	flex-direction: column;
-	border: 1px solid;
+	border: 3px solid black;
 	border-radius: 20px;
 	padding: 60px 50px;
 	font-size: 12px;
