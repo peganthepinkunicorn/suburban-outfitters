@@ -36,7 +36,7 @@
 					<h4>Quantity</h4>
 					<h4>Promotion</h4>
 					<h4>Line Total</h4>
-					<img src='../images/product1.jpg' class='product-thumbnail'></img>
+					<a href='../product1/product1.php'><img src='../images/product1.jpg' class='product-thumbnail'></img></a>
 					<span>Medium</span>
 					<span>White</span>
 					<span>1</span>
