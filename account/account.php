@@ -9,6 +9,47 @@
 	
 	<body>
 		<div class="page-content">
+
+<?php
+
+$page_roles = array('admin', 'employee', 'customer');
+
+require_once '../dbinfo/user.php';
+require_once '../dbinfo/checksession.php';
+
+if($_SESSION['user']){
+	
+	$user = $_SESSION['user'];
+	$username = $user->username;
+	$user_roles = $user->getRoles();
+	
+	$found=0;
+	foreach ($user_roles as $urole) {
+		foreach ($page_roles as $prole) {
+			if($urole==$prole) {
+				$found=1;
+			}
+		}
+	}
+	
+	if(!$found) {
+		header("Location: ../dbinfo/unauthorized.php");
+	}else{
+		echo "<h3>Welcome, $username!</h3>";
+	}
+	
+}else{
+	echo "username is not in the session<br>";
+}
+
+function destroy_session_and_data() {
+	$_SESSION = array();
+	setcookie(session_name(),'',time() - 2592000, '/');
+	session_destroy();
+}
+
+?>
+
 			<!--Nav Bar-->
 			<nav class="navbar navbar-default">
 				<div class="container">
@@ -20,14 +61,14 @@
 							<li><a href=''>Sales</a></li>
 							<li><a href='../account/account.php'>Account</a></li>
 							<li><a href=''>Contact Us</a></li>
-							<li><a href='../login/login.php'>Logout</a></li>
+							<li><a href='../logout/logout.php'>Logout</a></li>
 							<li><a href='../bag/bag.php'>Bag</a></li>
 						</ul>
 					</div>
 				</div>
 			</nav>
-			<h3>Welcome, First Last!</h3>
 			<div class='account-info-grid'>
+				<span><h3>Account Information</h3></span><span></span>
 				<span>Customer Name</span>
 				<span>First Last</span>
 				<span>Address</span>

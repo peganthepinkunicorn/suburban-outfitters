@@ -9,6 +9,16 @@
 	
 	<body>
 		<div class='page-content'>
+<?php
+
+$page_roles = array('admin', 'employee', 'customer');
+
+require_once '../dbinfo/user.php';
+require_once '../dbinfo/checksession.php';
+
+echo "<h3>Welcome, $username!</h3>";
+
+?>
 			<!--Nav Bar-->
 			<nav class="navbar navbar-default">
 				<div class="container">
@@ -20,7 +30,7 @@
 							<li><a href=''>Sales</a></li>
 							<li><a href='../account/account.php'>Account</a></li>
 							<li><a href=''>Contact Us</a></li>
-							<li><a href='../login/login.php'>Logout</a></li>
+							<li><a href='../logout/logout.php'>Logout</a></li>
 							<li><a href='../bag/bag.php'>Bag</a></li>
 						</ul>
 					</div>

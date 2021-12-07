@@ -9,6 +9,38 @@
 	
 	<body>
 		<div class="page-content">
+<?php
+
+$page_roles = array('admin', 'employee', 'customer');
+
+require_once '../dbinfo/user.php';
+require_once '../dbinfo/checksession.php';
+
+$conn = new mysqli($hn, $un, $pw, $db);
+if($conn->connect_error) die($conn->connect_error);
+
+$query = "SELECT role FROM roles WHERE username = '$username'";
+$result = $conn->query($query);
+if(!$result) die($conn->error);
+$rows = $result->num_rows;
+for($j=0; $j<$rows; $j++)
+	{
+		$result->data_seek($j);
+		$row = $result->fetch_array(MYSQLI_ASSOC);
+		$urole = $row['role'];
+	}
+		
+if($urole=='admin') 
+	{
+		echo "<a href='adminhome.php'>Back to Admin Home</a>"; 
+	}
+
+echo "<h3>Welcome, $username!</h3>";
+
+$result->close();
+$conn->close();
+
+?>
 			<!--Nav Bar-->
 			<nav class="navbar navbar-default">
 				<div class="container">
@@ -20,7 +52,7 @@
 							<li><a href=''>Sales</a></li>
 							<li><a href='../account/account.php'>Account</a></li>
 							<li><a href=''>Contact Us</a></li>
-							<li><a href='../login/login.php'>Logout</a></li>
+							<li><a href='../logout/logout.php'>Logout</a></li>
 							<li><a href='../bag/bag.php'>Bag</a></li>
 						</ul>
 					</div>
