@@ -9,13 +9,16 @@ class User{
 	
 	public $username;
 	public $roles = array(); //one or multiple rows the user has access to.
+
 	
-	function __construct($username){ //constructor takes username coming from the front and sets it in the user class to contain the valule of the username coming from the front.
+	function __construct($username){ 
 		global $conn;
 		
 		$this->username = $username;
 		
-		$query="select role from roles where username='$username' ";
+		$query="select role
+			from roles
+			where username='$username' ";
 		//echo $query.'<br>';
 		$result = $conn->query($query);
 		if(!$result) die($conn->error);
@@ -37,6 +40,8 @@ class User{
 	}
 
 }
+
+
 
 //$user = new User('bsmith');
 //$roles = $user -> getRoles();

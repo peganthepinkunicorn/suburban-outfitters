@@ -12,7 +12,7 @@ $forename = 'Selene';
 $surname = 'Danev';
 $username = 'sdanev';
 $password = 'cust123';
-$token = password_hash($password,PASSWORD_DEFAULT); 
+$token = password_hash($password,PASSWORD_DEFAULT);
 
 add_user($conn, $forename, $surname, $username, $token);
 

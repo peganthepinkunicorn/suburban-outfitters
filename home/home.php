@@ -53,7 +53,7 @@ $conn->close();
 							<li><a href='../account/account.php'>Account</a></li>
 							<li><a href=''>Contact Us</a></li>
 							<li><a href='../logout/logout.php'>Logout</a></li>
-							<li><a href='../bag/bag.php'>Bag</a></li>
+							<li><a href='../bag/shoppingbag.php'>Bag</a></li>
 						</ul>
 					</div>
 				</div>

@@ -1,72 +1,70 @@
-<html>
-
-	<head>
-		<link rel='stylesheet' href='../styles.css'>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	</head>
-	
-	<body>
-		<div class="page-content">
 <?php
 
-$page_roles = array('admin', 'employee', 'customer');
+class bagitem{
+	
+	public $username, $bagdate, $prod_name, $prod_id, $quantity, $price, $total, $status, $image;
+	
+	function __construct($username, $date, $prod_name, $prod_id, $quantity, $price, $total, $status, $image){
+		$this->username = $username;
+		$this->bagdate = $date;
+		$this->prod_id = $prod_id;
+		$this->prod_name = $prod_name;
+		$this->quantity = $quantity;
+		$this->price = $price;
+		$this->total = $total;
+		$this->status = $status;
+		$this->image = $image;
+	}
+	
+}
 
-require_once '../dbinfo/user.php';
-require_once '../dbinfo/checksession.php';
-echo "<h3>Welcome, $username!</h3>";
+/*
+
+	$bagitem = new bagitem($username, $date, $prod_name, $prod_id, $quantity, $sale_price, $total, $status);
+
+//create the shopping cart
+$cart = array();
+$cartitem1 = new CartItem("bsmith","01/01/2021",1234,2,2.10, 4.20,"active");
+
+array_push($cart, $cartitem1);
+
+//add to the cart
+$cartitem2 = new CartItem("bsmith","01/01/2021",34,2,2.10, 4.20,"active");
+$cartitem3 = new CartItem("bsmith","01/01/2021",87,2,2.10, 4.20,"active");
+$cartitem4 = new CartItem("bsmith","01/01/2021",698,2,2.10, 4.20,"active");
+
+array_push($cart, $cartitem2);
+array_push($cart, $cartitem3);
+array_push($cart, $cartitem4);
+
+print_r($cart);
+echo "<br>";
+echo "<br>";
+
+//add to DB
+
+function addtoDB($cart){
+	
+	//create order first
+	$stmt = "insert into order () values ()";
+	
+	
+	//add to order item
+	foreach($cart as $item){
+		$userid = $item->userid;
+		$productid = $item->productid;
+		
+		$stmt = "insert into orderitem () values ()";
+
+	}
+}
+
+//empty the cart
+$cart = array();
+
+//test
+print_r($cart);
+
+*/
+
 ?>
-			<!--Nav Bar-->
-			<nav class="navbar navbar-default">
-				<div class="container">
-					<div class="collapse navbar-collapse" id="myNavbar">
-						<img src='../images/logo.png' class='logo-round'></img>
-						<ul class='nav navbar-nav navbar-right'>
-							<li><a href='../home/home.php'>Home</a></li>
-							<li><a href='../products/products.php'>Products</a></li>
-							<li><a href=''>Sales</a></li>
-							<li><a href='../account/account.php'>Account</a></li>
-							<li><a href=''>Contact Us</a></li>
-							<li><a href='../logout/logout.php'>Logout</a></li>
-							<li><a href='../bag/bag.php'>Bag</a></li>
-						</ul>
-					</div>
-				</div>
-			</nav>
-			
-			<div class='page-content'>
-				<div class='bag-list'>
-					<!--list header-->
-					<span></span>
-					<h4>Size</h4>
-					<h4>Color</h4>
-					<h4>Quantity</h4>
-					<h4>Promotion</h4>
-					<h4>Line Total</h4>
-					<a href='../product1/product1.php'><img src='../images/product1.jpg' class='product-thumbnail'></img></a>
-					<span>Medium</span>
-					<span>White</span>
-					<span>1</span>
-					<span>50% off EOSS</span>
-					<span>$50</span>
-				</div>
-				<div class='bag-footer'>
-					<span>Order Sub-Total</span>
-					<span>$100</span>
-					<span>Discounts Applied:</span>
-					<span>-$50</span>
-					<span>Order Total</span>
-					<span>$50</span>
-				</div>
-				<form method='POST' action='../order-confirmation/order-confirmation.php' class='checkout'>
-					<span>Credit Card Number:</span><span><input type='number' name='credit-card' value='yyyy-mm'/></span>
-					<span>Expiration Date:</span><span><input type='date' name='expiration-date'></span>
-					<span>Name on Card:</span><span><input type='text' name='customer-name'/></span>
-					<span></span><span><input type='image' name='checkout' src='../images/button_checkout.png'/></span>
-				</form>
-			</div>
-			
-		</div>
-	</body>
-</html>

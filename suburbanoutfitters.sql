@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Dec 07, 2021 at 04:46 AM
+-- Generation Time: Dec 08, 2021 at 05:34 AM
 -- Server version: 8.0.21
 -- PHP Version: 7.3.21
 
@@ -64,34 +64,36 @@ CREATE TABLE IF NOT EXISTS `customer` (
   `cust_address` varchar(128) NOT NULL,
   `cust_city` varchar(50) NOT NULL,
   `cust_state` varchar(2) NOT NULL,
-  PRIMARY KEY (`cust_id`)
+  `username` varchar(128) DEFAULT NULL,
+  PRIMARY KEY (`cust_id`),
+  KEY `username` (`username`)
 ) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `customer`
 --
 
-INSERT INTO `customer` (`cust_id`, `f_name`, `l_name`, `cust_address`, `cust_city`, `cust_state`) VALUES
-(1, 'Seline', 'Danev', '997 Talisman Park', 'Columbia', 'SC'),
-(2, 'Cirstoforo', 'Halsho', '305 3rd Lane', 'Los Angeles', 'CA'),
-(3, 'Josefina', 'Christal', '5 Prairieview Alley', 'Pittsburgh', 'PA'),
-(4, 'Mallory', 'Silberschatz', '39 International Court', 'El Paso', 'TX'),
-(5, 'Ginni', 'Veschi', '99363 Springview Circle', 'Chicago', 'IL'),
-(6, 'Theressa', 'Kobelt', '53 Prentice Crossing', 'Macon', 'GA'),
-(7, 'Demetra', 'Haddock', '37 Farragut Plaza', 'Milwaukee', 'WI'),
-(8, 'Salvidor', 'Burkhill', '62297 Jana Hill', 'Oakland', 'CA'),
-(9, 'Alden', 'Pentecost', '5241 Bay Place', 'Sarasota', 'FL'),
-(10, 'Bridie', 'Fitzharris', '2425 Monument Terrace', 'Champaign', 'IL'),
-(11, 'Florrie', 'Borkin', '391 Sunbrook Parkway', 'North Hollywood', 'CA'),
-(12, 'Tiena', 'Scorthorne', '11 Graedel Street', 'Baltimore', 'MD'),
-(13, 'Collen', 'Gidman', '75548 Gulseth Pass', 'Saint Paul', 'MN'),
-(14, 'Chiquia', 'O\' Scallan', '137 Forster Trail', 'Chattanooga', 'TN'),
-(15, 'Sally', 'Spittall', '6073 Sutherland Trail', 'Seattle', 'WA'),
-(16, 'Leodora', 'Giacopetti', '42 Redwing Alley', 'South Bend', 'IN'),
-(17, 'Lulu', 'Parlett', '3021 Shopko Parkway', 'Detroit', 'MI'),
-(18, 'Osmond', 'Hepher', '6519 Raven Alley', 'Kansas City', 'MO'),
-(19, 'Stewart', 'Baack', '3 Jenifer Park', 'Tallahassee', 'FL'),
-(20, 'Raquela', 'Nigh', '773 Knutson Junction', 'Durham', 'NC');
+INSERT INTO `customer` (`cust_id`, `f_name`, `l_name`, `cust_address`, `cust_city`, `cust_state`, `username`) VALUES
+(1, 'Seline', 'Danev', '997 Talisman Park', 'Columbia', 'SC', 'sdanev'),
+(2, 'Cirstoforo', 'Halsho', '305 3rd Lane', 'Los Angeles', 'CA', 'chalsho'),
+(3, 'Josefina', 'Christal', '5 Prairieview Alley', 'Pittsburgh', 'PA', 'jchristal'),
+(4, 'Mallory', 'Silberschatz', '39 International Court', 'El Paso', 'TX', 'msilberschatz'),
+(5, 'Ginni', 'Veschi', '99363 Springview Circle', 'Chicago', 'IL', 'gveschi'),
+(6, 'Theressa', 'Kobelt', '53 Prentice Crossing', 'Macon', 'GA', 'tkobelt'),
+(7, 'Demetra', 'Haddock', '37 Farragut Plaza', 'Milwaukee', 'WI', 'dhaddock'),
+(8, 'Salvidor', 'Burkhill', '62297 Jana Hill', 'Oakland', 'CA', 'sburkhill'),
+(9, 'Alden', 'Pentecost', '5241 Bay Place', 'Sarasota', 'FL', 'apentecost'),
+(10, 'Bridie', 'Fitzharris', '2425 Monument Terrace', 'Champaign', 'IL', 'bfitzharris'),
+(11, 'Florrie', 'Borkin', '391 Sunbrook Parkway', 'North Hollywood', 'CA', 'fborkin'),
+(12, 'Tiena', 'Scorthorne', '11 Graedel Street', 'Baltimore', 'MD', 'tscorthorne'),
+(13, 'Collen', 'Gidman', '75548 Gulseth Pass', 'Saint Paul', 'MN', 'cgidman'),
+(14, 'Chiquia', 'O\' Scallan', '137 Forster Trail', 'Chattanooga', 'TN', 'co\' scallan'),
+(15, 'Sally', 'Spittall', '6073 Sutherland Trail', 'Seattle', 'WA', 'sspittall'),
+(16, 'Leodora', 'Giacopetti', '42 Redwing Alley', 'South Bend', 'IN', 'lgiacopetti'),
+(17, 'Lulu', 'Parlett', '3021 Shopko Parkway', 'Detroit', 'MI', 'lparlett'),
+(18, 'Osmond', 'Hepher', '6519 Raven Alley', 'Kansas City', 'MO', 'ohepher'),
+(19, 'Stewart', 'Baack', '3 Jenifer Park', 'Tallahassee', 'FL', 'sbaack'),
+(20, 'Raquela', 'Nigh', '773 Knutson Junction', 'Durham', 'NC', 'rnigh');
 
 -- --------------------------------------------------------
 
@@ -111,7 +113,7 @@ CREATE TABLE IF NOT EXISTS `cust_order` (
   KEY `emp_id` (`emp_id`),
   KEY `cust_id` (`cust_id`),
   KEY `store_id` (`store_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=51 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=93 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `cust_order`
@@ -234,12 +236,12 @@ CREATE TABLE IF NOT EXISTS `cust_saved_pmt` (
   `cust_id` int NOT NULL,
   `name_on_card` varchar(128) NOT NULL,
   `card_number` varchar(16) NOT NULL,
-  `card_type` varchar(50) NOT NULL,
+  `card_type` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `exp_date` date NOT NULL,
   `sec_num` varchar(4) NOT NULL,
   PRIMARY KEY (`card_id`),
   KEY `cust_id` (`cust_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `cust_saved_pmt`
@@ -280,24 +282,27 @@ CREATE TABLE IF NOT EXISTS `employee` (
   `f_name` varchar(128) NOT NULL,
   `position` varchar(1280) NOT NULL,
   `store_id` int NOT NULL,
+  `username` varchar(128) DEFAULT NULL,
   PRIMARY KEY (`emp_id`),
-  KEY `store_id` (`store_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  KEY `store_id` (`store_id`),
+  KEY `username` (`username`)
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `employee`
 --
 
-INSERT INTO `employee` (`emp_id`, `l_name`, `f_name`, `position`, `store_id`) VALUES
-(1, 'Kippen', 'Cyrille', 'manager', 1),
-(2, 'Vassano', 'Codie', 'manager', 2),
-(3, 'Dunridge', 'Renado', 'manager', 3),
-(4, 'Hacker', 'Alida', 'employee', 1),
-(5, 'Raftery', 'Lilas', 'employee', 2),
-(6, 'Brady', 'Bobby', 'employee', 3),
-(7, 'Canton', 'Percy', 'employee', 1),
-(8, 'Hugnet', 'Joanna', 'employee', 2),
-(9, 'Andreasen', 'Chuck', 'employee', 3);
+INSERT INTO `employee` (`emp_id`, `l_name`, `f_name`, `position`, `store_id`, `username`) VALUES
+(1, 'Kippen', 'Cyrille', 'manager', 1, 'ckippen'),
+(2, 'Vassano', 'Codie', 'manager', 2, 'cvassano'),
+(3, 'Dunridge', 'Renado', 'manager', 3, 'rdunridge'),
+(4, 'Hacker', 'Alida', 'employee', 1, 'ahacker'),
+(5, 'Raftery', 'Lilas', 'employee', 2, 'lraftery'),
+(6, 'Brady', 'Bobby', 'employee', 3, 'bbrady'),
+(7, 'Canton', 'Percy', 'employee', 1, 'pcanton'),
+(8, 'Hugnet', 'Joanna', 'employee', 2, 'jhugnet'),
+(9, 'Andreasen', 'Chuck', 'employee', 3, 'candreasen'),
+(10, 'Smith', 'Bill', 'IT Support', 1, 'bsmith');
 
 -- --------------------------------------------------------
 
@@ -323,7 +328,7 @@ CREATE TABLE IF NOT EXISTS `inventory` (
   KEY `store_id` (`store_id`),
   KEY `line_id` (`line_id`),
   KEY `return_id` (`return_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1882 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=1885 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `inventory`
@@ -822,7 +827,7 @@ CREATE TABLE IF NOT EXISTS `orderline` (
   KEY `order_id` (`order_id`),
   KEY `prod_id` (`prod_id`),
   KEY `camp_id` (`camp_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=301 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=351 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `orderline`
@@ -1146,7 +1151,7 @@ CREATE TABLE IF NOT EXISTS `order_pmt` (
   PRIMARY KEY (`pmt_id`),
   KEY `card_id` (`card_id`),
   KEY `order_id` (`order_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=51 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=56 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `order_pmt`
@@ -1218,6 +1223,7 @@ CREATE TABLE IF NOT EXISTS `product` (
   `vendor_id` int NOT NULL,
   `sale_price` float NOT NULL,
   `cost` float NOT NULL,
+  `image` varchar(128) NOT NULL,
   PRIMARY KEY (`prod_id`),
   KEY `vendor_id` (`vendor_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=48 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -1226,54 +1232,54 @@ CREATE TABLE IF NOT EXISTS `product` (
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`prod_id`, `prod_name`, `type`, `vendor_id`, `sale_price`, `cost`) VALUES
-(1, 'Lightweight waterproof coat', 'Outterwear', 6, 100, 50),
-(2, 'Cotton pajamas', 'Bottoms', 8, 50, 25),
-(3, 'Cotton blouse', 'Tops', 10, 30, 15),
-(4, 'Printed tops', 'Tops', 1, 15, 7.5),
-(5, 'Peacoat', 'Outterwear', 3, 100, 50),
-(6, 'Cardigan', 'Sweaters', 9, 50, 25),
-(7, 'Long-sleeved black T-shirt', 'Tops', 10, 25, 12.5),
-(8, 'Down vest', 'Outterwear', 4, 150, 75),
-(9, 'Black cashmere wrap coat', 'Outterwear', 5, 200, 100),
-(10, 'Leather blazer', 'Outterwear', 5, 300, 150),
-(11, 'White jeans', 'Bottoms', 8, 80, 40),
-(12, 'Flat boots (black or brown)', 'Shoes', 9, 90, 45),
-(13, 'Pantsuit', 'Bottoms', 10, 200, 100),
-(14, 'Athletic sweatshirt', 'Outterwear', 9, 60, 30),
-(15, 'Cropped jacket', 'Outterwear', 3, 80, 40),
-(16, 'Convertible strapless bra', 'Underwear', 8, 50, 25),
-(17, 'Short-sleeved black T-shirt', 'Tops', 4, 50, 25),
-(18, 'Jeans', 'Bottoms', 7, 80, 40),
-(19, 'Lightweight cashmere sweater', 'Sweaters', 1, 100, 50),
-(20, 'Wool trousers', 'Bottoms', 4, 100, 50),
-(21, 'Black heeled booties', 'Shoes', 1, 80, 40),
-(22, 'Cashmere hoodie', 'Sweaters', 3, 100, 50),
-(23, 'Khaki trench coat', 'Outterwear', 9, 150, 75),
-(24, 'One-button blazer', 'Outterwear', 8, 80, 40),
-(25, 'Black dress', 'Dresses', 5, 80, 40),
-(26, 'Khaki shorts', 'Bottoms', 3, 50, 25),
-(27, 'Black tank', 'Tops', 6, 20, 10),
-(28, 'Capri pants', 'Bottoms', 10, 70, 35),
-(29, 'Black turtleneck', 'Tops', 4, 40, 20),
-(30, 'Crewneck sweater', 'Sweaters', 5, 60, 30),
-(31, 'Flat leather sandals', 'Shoes', 5, 50, 25),
-(32, 'Black cashmere wrap', 'Sweaters', 6, 70, 35),
-(33, 'Lightweight waterproof raincoat', 'Outterwear', 7, 95, 47.5),
-(34, 'The tuxedo shirt', 'Tops', 10, 200, 100),
-(35, 'Short-sleeved white T-shirt', 'Tops', 7, 30, 15),
-(36, 'Fleece vest', 'Outterwear', 3, 50, 25),
-(37, 'Built-in bra tank', 'Tops', 5, 40, 20),
-(38, 'Inverted pleat skirt', 'Bottoms', 1, 60, 30),
-(39, 'Winter coat', 'Outterwear', 5, 100, 50),
-(40, 'Metallic evening shoes', 'Shoes', 2, 90, 45),
-(41, 'Ribbed cotton tank', 'Tops', 2, 25, 12.5),
-(42, 'Gray flannel pants', 'Bottoms', 8, 35, 17.5),
-(43, 'Long-sleeved white T-shirt', 'Tops', 10, 25, 12.5),
-(44, 'Cotton printed dress', 'Dresses', 9, 50, 25),
-(45, 'Ballet flats (in a neutral or a versatile red)', 'Shoes', 4, 40, 20),
-(46, 'Dark-wash jeans', 'Bottoms', 10, 90, 45),
-(47, 'Strapless dress', 'Dresses', 6, 150, 75);
+INSERT INTO `product` (`prod_id`, `prod_name`, `type`, `vendor_id`, `sale_price`, `cost`, `image`) VALUES
+(1, 'Lightweight waterproof coat', 'Outterwear', 6, 100, 50, '../images/outterwear.jpg'),
+(2, 'Cotton pajamas', 'Bottoms', 8, 50, 25, '../images/bottoms.jpg'),
+(3, 'Cotton blouse', 'Tops', 10, 30, 15, '../images/tops.jpg'),
+(4, 'Printed tops', 'Tops', 1, 15, 7.5, '../images/tops.jpg'),
+(5, 'Peacoat', 'Outterwear', 3, 100, 50, '../images/outterwear.jpg'),
+(6, 'Cardigan', 'Sweaters', 9, 50, 25, '../images/sweaters.jpg'),
+(7, 'Long-sleeved black T-shirt', 'Tops', 10, 25, 12.5, '../images/tops.jpg'),
+(8, 'Down vest', 'Outterwear', 4, 150, 75, '../images/outterwear.jpg'),
+(9, 'Black cashmere wrap coat', 'Outterwear', 5, 200, 100, '../images/outterwear.jpg'),
+(10, 'Leather blazer', 'Outterwear', 5, 300, 150, '../images/outterwear.jpg'),
+(11, 'White jeans', 'Bottoms', 8, 80, 40, '../images/bottoms.jpg'),
+(12, 'Flat boots (black or brown)', 'Shoes', 9, 90, 45, '../images/shoes.jpg'),
+(13, 'Pantsuit', 'Bottoms', 10, 200, 100, '../images/bottoms.jpg'),
+(14, 'Athletic sweatshirt', 'Outterwear', 9, 60, 30, '../images/outterwear.jpg'),
+(15, 'Cropped jacket', 'Outterwear', 3, 80, 40, '../images/outterwear.jpg'),
+(16, 'Convertible strapless bra', 'Underwear', 8, 50, 25, '../images/underwear.jpg'),
+(17, 'Short-sleeved black T-shirt', 'Tops', 4, 50, 25, '../images/tops.jpg'),
+(18, 'Jeans', 'Bottoms', 7, 80, 40, '../images/bottoms.jpg'),
+(19, 'Lightweight cashmere sweater', 'Sweaters', 1, 100, 50, '../images/sweaters.jpg'),
+(20, 'Wool trousers', 'Bottoms', 4, 100, 50, '../images/bottoms.jpg'),
+(21, 'Black heeled booties', 'Shoes', 1, 80, 40, '../images/shoes.jpg'),
+(22, 'Cashmere hoodie', 'Sweaters', 3, 100, 50, '../images/sweaters.jpg'),
+(23, 'Khaki trench coat', 'Outterwear', 9, 150, 75, '../images/outterwear.jpg'),
+(24, 'One-button blazer', 'Outterwear', 8, 80, 40, '../images/outterwear.jpg'),
+(25, 'Black dress', 'Dresses', 5, 80, 40, '../images/dresses.jpg'),
+(26, 'Khaki shorts', 'Bottoms', 3, 50, 25, '../images/bottoms.jpg'),
+(27, 'Black tank', 'Tops', 6, 20, 10, '../images/tops.jpg'),
+(28, 'Capri pants', 'Bottoms', 10, 70, 35, '../images/bottoms.jpg'),
+(29, 'Black turtleneck', 'Tops', 4, 40, 20, '../images/tops.jpg'),
+(30, 'Crewneck sweater', 'Sweaters', 5, 60, 30, '../images/sweaters.jpg'),
+(31, 'Flat leather sandals', 'Shoes', 5, 50, 25, '../images/shoes.jpg'),
+(32, 'Black cashmere wrap', 'Sweaters', 6, 70, 35, '../images/sweaters.jpg'),
+(33, 'Lightweight waterproof raincoat', 'Outterwear', 7, 95, 47.5, '../images/outterwear.jpg'),
+(34, 'The tuxedo shirt', 'Tops', 10, 200, 100, '../images/tops.jpg'),
+(35, 'Short-sleeved white T-shirt', 'Tops', 7, 30, 15, '../images/tops.jpg'),
+(36, 'Fleece vest', 'Outterwear', 3, 50, 25, '../images/outterwear.jpg'),
+(37, 'Built-in bra tank', 'Tops', 5, 40, 20, '../images/tops.jpg'),
+(38, 'Inverted pleat skirt', 'Bottoms', 1, 60, 30, '../images/bottoms.jpg'),
+(39, 'Winter coat', 'Outterwear', 5, 100, 50, '../images/outterwear.jpg'),
+(40, 'Metallic evening shoes', 'Shoes', 2, 90, 45, '../images/shoes.jpg'),
+(41, 'Ribbed cotton tank', 'Tops', 2, 25, 12.5, '../images/tops.jpg'),
+(42, 'Gray flannel pants', 'Bottoms', 8, 35, 17.5, '../images/bottoms.jpg'),
+(43, 'Long-sleeved white T-shirt', 'Tops', 10, 25, 12.5, '../images/tops.jpg'),
+(44, 'Cotton printed dress', 'Dresses', 9, 50, 25, '../images/dresses.jpg'),
+(45, 'Ballet flats (in a neutral or a versatile red)', 'Shoes', 4, 40, 20, '../images/shoes.jpg'),
+(46, 'Dark-wash jeans', 'Bottoms', 10, 90, 45, '../images/bottoms.jpg'),
+(47, 'Strapless dress', 'Dresses', 6, 150, 75, '../images/dresses.jpg');
 
 -- --------------------------------------------------------
 
@@ -1288,7 +1294,7 @@ CREATE TABLE IF NOT EXISTS `roles` (
   `role` varchar(128) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `username` (`username`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `roles`
@@ -1296,7 +1302,35 @@ CREATE TABLE IF NOT EXISTS `roles` (
 
 INSERT INTO `roles` (`id`, `username`, `role`) VALUES
 (1, 'bsmith', 'admin'),
-(2, 'sdanev', 'customer');
+(2, 'sdanev', 'customer'),
+(3, 'apentecost', 'customer'),
+(4, 'bfitzharris', 'customer'),
+(5, 'cgidman', 'customer'),
+(6, 'chalsho', 'customer'),
+(7, 'co\' scallan', 'customer'),
+(8, 'dhaddock', 'customer'),
+(9, 'fborkin', 'customer'),
+(10, 'gveschi', 'customer'),
+(11, 'jchristal', 'customer'),
+(12, 'lgiacopetti', 'customer'),
+(13, 'lparlett', 'customer'),
+(14, 'msilberschatz', 'customer'),
+(15, 'ohepher', 'customer'),
+(16, 'rnigh', 'customer'),
+(17, 'sbaack', 'customer'),
+(18, 'sburkhill', 'customer'),
+(20, 'sspittall', 'customer'),
+(21, 'tkobelt', 'customer'),
+(22, 'tscorthorne', 'customer'),
+(23, 'ahacker', 'admin'),
+(24, 'bbrady', 'admin'),
+(25, 'candreasen', 'admin'),
+(26, 'ckippen', 'admin'),
+(27, 'cvassano', 'admin'),
+(28, 'jhugnet', 'admin'),
+(29, 'lraftery', 'admin'),
+(30, 'pcanton', 'admin'),
+(31, 'rdunridge', 'admin');
 
 -- --------------------------------------------------------
 
@@ -1415,9 +1449,37 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`forename`, `surname`, `username`, `password`) VALUES
-('Bill', 'Smith', 'bsmith', '$2y$10$gmEUp7v7yEQHq8zIwvqSaO0t7uDLRqHZhMU5VCjPA99fLs7yMcVz6'),
-('Pauline', 'Jones', 'pjones', '$2y$10$Qwu8f.nLRcitUtWOP38.re6a7y6Tg2xc6s6SaXAiBDnS.j7h2x1bG'),
-('Selene', 'Danev', 'sdanev', '$2y$10$EdQUSfOSRlQPJ/OMfsVc..mUAda7M8F3kuWHB.c.7Fs90JohLFE0m');
+('Bill', 'Smith', 'bsmith', '$2y$10$EdQUSfOSRlQPJ/OMfsVc..mUAda7M8F3kuWHB.c.7Fs90JohLFE0m'),
+('Pauline', 'Jones', 'pjones', '$2y$10$EdQUSfOSRlQPJ/OMfsVc..mUAda7M8F3kuWHB.c.7Fs90JohLFE0m'),
+('Selene', 'Danev', 'sdanev', '$2y$10$EdQUSfOSRlQPJ/OMfsVc..mUAda7M8F3kuWHB.c.7Fs90JohLFE0m'),
+('Stewart', 'Baack', 'sbaack', '$2y$10$EdQUSfOSRlQPJ/OMfsVc..mUAda7M8F3kuWHB.c.7Fs90JohLFE0m'),
+('Osmond', 'Hepher', 'ohepher', '$2y$10$EdQUSfOSRlQPJ/OMfsVc..mUAda7M8F3kuWHB.c.7Fs90JohLFE0m'),
+('Lulu', 'Parlett', 'lparlett', '$2y$10$EdQUSfOSRlQPJ/OMfsVc..mUAda7M8F3kuWHB.c.7Fs90JohLFE0m'),
+('Leodora', 'Giacopetti', 'lgiacopetti', '$2y$10$EdQUSfOSRlQPJ/OMfsVc..mUAda7M8F3kuWHB.c.7Fs90JohLFE0m'),
+('Sally', 'Spittall', 'sspittall', '$2y$10$EdQUSfOSRlQPJ/OMfsVc..mUAda7M8F3kuWHB.c.7Fs90JohLFE0m'),
+('Chiquia', 'O\' Scallan', 'co\' scallan', '$2y$10$EdQUSfOSRlQPJ/OMfsVc..mUAda7M8F3kuWHB.c.7Fs90JohLFE0m'),
+('Collen', 'Gidman', 'cgidman', '$2y$10$EdQUSfOSRlQPJ/OMfsVc..mUAda7M8F3kuWHB.c.7Fs90JohLFE0m'),
+('Tiena', 'Scorthorne', 'tscorthorne', '$2y$10$EdQUSfOSRlQPJ/OMfsVc..mUAda7M8F3kuWHB.c.7Fs90JohLFE0m'),
+('Florrie', 'Borkin', 'fborkin', '$2y$10$EdQUSfOSRlQPJ/OMfsVc..mUAda7M8F3kuWHB.c.7Fs90JohLFE0m'),
+('Bridie', 'Fitzharris', 'bfitzharris', '$2y$10$EdQUSfOSRlQPJ/OMfsVc..mUAda7M8F3kuWHB.c.7Fs90JohLFE0m'),
+('Alden', 'Pentecost', 'apentecost', '$2y$10$EdQUSfOSRlQPJ/OMfsVc..mUAda7M8F3kuWHB.c.7Fs90JohLFE0m'),
+('Salvidor', 'Burkhill', 'sburkhill', '$2y$10$EdQUSfOSRlQPJ/OMfsVc..mUAda7M8F3kuWHB.c.7Fs90JohLFE0m'),
+('Demetra', 'Haddock', 'dhaddock', '$2y$10$EdQUSfOSRlQPJ/OMfsVc..mUAda7M8F3kuWHB.c.7Fs90JohLFE0m'),
+('Theressa', 'Kobelt', 'tkobelt', '$2y$10$EdQUSfOSRlQPJ/OMfsVc..mUAda7M8F3kuWHB.c.7Fs90JohLFE0m'),
+('Ginni', 'Veschi', 'gveschi', '$2y$10$EdQUSfOSRlQPJ/OMfsVc..mUAda7M8F3kuWHB.c.7Fs90JohLFE0m'),
+('Mallory', 'Silberschatz', 'msilberschatz', '$2y$10$EdQUSfOSRlQPJ/OMfsVc..mUAda7M8F3kuWHB.c.7Fs90JohLFE0m'),
+('Josefina', 'Christal', 'jchristal', '$2y$10$EdQUSfOSRlQPJ/OMfsVc..mUAda7M8F3kuWHB.c.7Fs90JohLFE0m'),
+('Cirstoforo', 'Halsho', 'chalsho', '$2y$10$EdQUSfOSRlQPJ/OMfsVc..mUAda7M8F3kuWHB.c.7Fs90JohLFE0m'),
+('Raquela', 'Nigh', 'rnigh', '$2y$10$EdQUSfOSRlQPJ/OMfsVc..mUAda7M8F3kuWHB.c.7Fs90JohLFE0m'),
+('Cyrille', 'Kippen', 'ckippen', ''),
+('Codie', 'Vassano', 'cvassano', ''),
+('Renado', 'Dunridge', 'rdunridge', ''),
+('Alida', 'Hacker', 'ahacker', ''),
+('Lilas', 'Raftery', 'lraftery', ''),
+('Bobby', 'Brady', 'bbrady', ''),
+('Percy', 'Canton', 'pcanton', ''),
+('Joanna', 'Hugnet', 'jhugnet', ''),
+('Chuck', 'Andreasen', 'candreasen', '');
 
 -- --------------------------------------------------------
 

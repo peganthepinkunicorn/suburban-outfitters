@@ -16,36 +16,7 @@ $page_roles = array('admin', 'employee', 'customer');
 require_once '../dbinfo/user.php';
 require_once '../dbinfo/checksession.php';
 
-if($_SESSION['user']){
-	
-	$user = $_SESSION['user'];
-	$username = $user->username;
-	$user_roles = $user->getRoles();
-	
-	$found=0;
-	foreach ($user_roles as $urole) {
-		foreach ($page_roles as $prole) {
-			if($urole==$prole) {
-				$found=1;
-			}
-		}
-	}
-	
-	if(!$found) {
-		header("Location: ../dbinfo/unauthorized.php");
-	}else{
-		echo "<h3>Welcome, $username!</h3>";
-	}
-	
-}else{
-	echo "username is not in the session<br>";
-}
-
-function destroy_session_and_data() {
-	$_SESSION = array();
-	setcookie(session_name(),'',time() - 2592000, '/');
-	session_destroy();
-}
+echo "<h3>Welcome, $username!</h3>";
 
 ?>
 			<!--Nav Bar-->
@@ -65,40 +36,90 @@ function destroy_session_and_data() {
 					</div>
 				</div>
 			</nav>
-			
+
+<?php
+
+//Get Customer Information
+		$conn = new mysqli($hn, $un, $pw, $db);
+		if($conn->connect_error) die($conn->connect_error);
+		$cust_info_query = ("select * from customer where username ='$username'");
+
+		$result = $conn->query($cust_info_query); 
+		if(!$result) die($conn->error);
+
+		$rows = $result->num_rows;
+		for($j=0; $j<$rows; $j++)
+		{
+			$row= $result ->fetch_array(MYSQLI_ASSOC);
+			$firstname = $row['f_name'];
+			$lastname = $row['l_name'];
+			$cust_id = $row['cust_id'];
+			$address = $row['cust_address'];
+			$city = $row['cust_city'];
+			$state = $row['cust_state'];
+		}
+		//End of getting customer information
+
+echo <<<_END
 			<h4>Name</h4>
-			<form method='POST' action='../account/account.php'>
+			<form method='POST' action='account-update.php'>
 				<div class='account-info-grid'>
 					<span>First Name</span>
-					<span><input type='text' name='first-name'/></span>
+					<span><input type='text' name='firstname' value ='$firstname'></span>
 					<span>Last Name</span>
-					<span><input type='text' name='last-name'/></span>
+					<span><input type='text' name='lastname' value='$lastname'/></span>
 				</div>
 				<h4>Address</h4>
 				<div class='account-info-grid'>
 					<span>Street Address</span>
-					<span><input type='text' name='street-address'/></span>
+					<span><input type='text' name='address' value='$address''/></span>
 					<span>City</span>
-					<span><input type='text' name='city'/></span>
+					<span><input type='text' name='city' value='$city'/></span>
 					<span>State</span>
-					<span><input type='text' name='state'/></span>
-					<span>Zip Code</span>
-					<span><input type='number' name='zip'/></span>
-				</div>
-				<h4>Payment</h4>
-				<div class='account-info-grid'>
-					<span>Card Number</span>
-					<span><input type='number' name='card-number'/></span>
-					<span>Expiration Date</span>
-					<span><input type='date' name='expiration-date'/></span>
-					<span>Name on Card</span>
-					<span><input type='text' name='name-on-card'/></span>
+					<span><input type='text' name='state' value='$state'/></span>
 				</div>
 				<div class='account-info-grid'>
+					
+					<input type = 'hidden' name='update' value='yes'>
+					<input type = 'hidden' name='cust_id' value='$cust_id'>
 					<input type='image' name='save-account-information' src='../images/button_save-changes.png'/>
 					<a href ='../account/account.php'><img src='../images/button_cancel.png'></img></a>
 				</div>
+				<div class='account-info-grid'>
+					
+				</div>
 			</form>
+_END;
+
+?>
 		</div>
 	</body>
 </html>
+
+<?php
+if(isset($_POST['update']))
+{
+	$cust_id = $_POST['cust_id'];
+	$firstname = fix_string($_POST['firstname']);
+	$lastname = fix_string($_POST['lastname']);
+	$address = fix_string($_POST['address']);
+	$city = fix_string($_POST['city']);
+	$state = fix_string($_POST['state']);
+	
+	$query="UPDATE customer SET f_name='$firstname', l_name='$lastname', cust_address='$address', cust_city='$city', cust_state='$state' WHERE cust_id = $cust_id";
+	
+	$result = $conn->query($query);
+	if(!$result) die($conn->error);
+	
+	header("Location: ../account/account.php");
+}
+
+///sanitization function
+function fix_string($string){
+	$string = stripslashes($string);
+    $string = strip_tags($string);
+    $string = htmlentities($string);
+    return $string;
+}
+
+?>

@@ -23,5 +23,4 @@ if(!isset($_SESSION['user'])) {
 		header("Location: ../dbinfo/unauthorized.php");
 	}
 }
-
 ?>

@@ -42,49 +42,20 @@ echo "<h3>Welcome, $username!</h3>";
 					</div>
 				</div>
 			</nav>
-			<div class='account-info-grid'>
-				<span><h3>Account Information</h3></span><span></span>
+			<span><h3>Order History</h3></span><span></span>
+				<div class='order-history-list'>
 <?php
-
-//Get Customer Information
-		$conn = new mysqli($hn, $un, $pw, $db);
-		if($conn->connect_error) die($conn->connect_error);
-		$get_cust_info = ("select * from customer where username ='$username'");
-
-		$result = $conn->query($get_cust_info); 
-		if(!$result) die($conn->error);
-
-		$rows = $result->num_rows;
-		for($j=0; $j<$rows; $j++)
-		{
-			$row= $result ->fetch_array(MYSQLI_ASSOC);
-			$firstname = $row['f_name'];
-			$lastname = $row['l_name'];
-			$cust_id = $row['cust_id'];
-			$address = $row['cust_address'];
-			$city = $row['cust_city'];
-			$state = $row['cust_state'];
-		}
-		//End of getting customer information
-
-echo <<<_END
-					<span>Customer Name</span>
-					<span>$firstname $lastname</span>
-					<span>Street Address</span>
-					<span>$address</span>
-					<span>City</span>
-					<span>$city</span>
-					<span>state</span>
-					<span>$state</span>
-
-					<span><a href='../account-update/account-update.php'><img src='../images/update-info-button.png'></img></a></span>
-					<span><a href='order-history.php'><img src='../images/order-history-button.png'></img></a></span>
-				<span><h3>Saved Payments</h3></span><span></span>
-_END;
 
 $conn = new mysqli($hn, $un, $pw, $db);
 if($conn->connect_error) die($conn->connect_error);
-$get_card_info = "SELECT * FROM cust_saved_pmt WHERE cust_id = $cust_id";
+$get_card_info = "SELECT *
+	FROM users, customer, cust_order
+	WHERE
+		users.username = customer.username AND
+		customer.cust_id = cust_order.cust_id AND
+		customer.username = '$username'
+	ORDER BY
+		order_id";
 
 $result = $conn->query($get_card_info); 
 if(!$result) die($conn->error);
@@ -97,16 +68,9 @@ for($j=0; $j<$rows; $j++)
 	$row = $result->fetch_array(MYSQLI_ASSOC); 
 
 echo <<<_END
-	<span>Name on Card:</span>
-	<span>$row[name_on_card]</span>
-	<span>Card Number:</span>
-	<span>$row[card_number]</span>
-	<span>card Type:</span>
-	<span>$row[card_type]</span>
-	<span>Expiration Date:</span>
-	<span>$row[exp_date]</span>
-	<span>CVV:</span>
-	<span>$row[sec_num]</span>
+	<span>Order ID: <a href='order-detail.php?order_id=$row[order_id]'>$row[order_id]</a></span>
+	<span>Order Date: $row[order_date]</span>
+	<span>Order Total: $row[order_total]</span>
 _END;
 
 }

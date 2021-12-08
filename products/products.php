@@ -1,3 +1,14 @@
+<?php
+
+$page_roles = array('admin', 'employee', 'customer');
+
+require_once '../dbinfo/checksession.php';
+require_once '../dbinfo/user.php';
+$conn = new mysqli($hn, $un, $pw, $db);
+
+if ($conn->connect_error) die($conn->connect_error);
+?>
+
 <html>
 
 	<head>
@@ -10,16 +21,9 @@
 	<body>
 		<div class='page-content'>
 <?php
-
-$page_roles = array('admin', 'employee', 'customer');
-
-require_once '../dbinfo/user.php';
-require_once '../dbinfo/checksession.php';
-
 echo "<h3>Welcome, $username!</h3>";
-
 ?>
-			<!--Nav Bar-->
+		<!--Nav Bar-->
 			<nav class="navbar navbar-default">
 				<div class="container">
 					<div class="collapse navbar-collapse" id="myNavbar">
@@ -31,58 +35,63 @@ echo "<h3>Welcome, $username!</h3>";
 							<li><a href='../account/account.php'>Account</a></li>
 							<li><a href=''>Contact Us</a></li>
 							<li><a href='../logout/logout.php'>Logout</a></li>
-							<li><a href='../bag/bag.php'>Bag</a></li>
+							<li><a href='../bag/shoppingbag.php'>Bag</a></li>
 						</ul>
 					</div>
 				</div>
 			</nav>
-			<div class='product-container'>
-				<!--Filter container-->
-				<div>
-					<form class='filter-container' method='post' action=''>
-						<h3>Filter</h3>
-						<h4>size</h4>
-							<span>Small <input type='checkbox' name='Size'/></span>
-							<span>Medium <input type ='checkbox' name='size'/></span>
-							<span>Large <input type = 'checkbox' name = 'size'/></span>
-						<h4>Color</h4>
-							<span>Black <input type = 'checkbox' name='color[]'/></span>
-							<span>White <input type = 'checkbox' name='color[]'/></span>
-							<span>Gray <input type = 'checkbox' name='color[]'/></span>
-						<h4>Category</h4>
-							<span>Shirts <input type = 'checkbox' name='category[]'/></span>
-							<span>Pants <input type = 'checkbox' name='category[]'/></span>
-							<span>Dresses <input type = 'checkbox' name='category[]'/></span>
-							<span>Accessories <input type = 'checkbox' name='category[]'/></span>
-						<input type='submit' name='submit' value='Filter Results'/>
-					</form>
+			<div class='product-list'>
+<?php
+$query=
+	"select
+		i.prod_id,
+		prod_name, type,
+		sale_price,
+		image,
+		sum(quantity) AS available
+	from
+		product p,
+		inventory i
+	where
+		p.prod_id = i.prod_id
+	group BY
+		prod_id,
+		prod_name,
+		type,
+		sale_price";
+
+$result=$conn->query($query);
+
+if(!$result) die ($conn->error);
+
+$rows=$result->num_rows;
+
+for($j=0; $j<$rows; $j++) {
+	$result->data_seek($j);
+	$row=$result->fetch_array(MYSQLI_BOTH);
+
+echo <<<_END
+
+<!--Products-->
+				<div class='product-detail'>
+					<span><a href='product-detail.php?prod_id=$row[prod_id]'><img src='$row[image]' height='300'></img></a></span>
+					<span><a href='product-detail.php?prod_id=$row[prod_id]'>$row[prod_name]</a></span>
+					<span>$row[type]</span>
+					<span>Price: $$row[sale_price]</span>
+					<span>$row[available] available</span>
 				</div>
-				<!--Products List-->
-					<div class='product-list'>
-						<!--Product 1-->
-						<div class='product-detail'>
-							<a href='../product1/product1.php'><img src='../images/product1.jpg' class='product-thumbnail'></img></a>
-							<a href='../product1/product1.php'>Summer Dress</a>
-							<span>1 in stock</span>
-							<span>$100.00</span>
-						</div>
-						<!--Product 2-->
-						<div class='product-detail'>
-							<a href='../product1/product1.php'><img src='../images/product2.jpg' class='product-thumbnail'></img></a>
-							<a href='../product1/product1.php'>Slacks</a>
-							<span>3 in stock</span>
-							<span>$100.00</span>
-						</div>
-						<!--Product 3-->
-						<div class='product-detail'>
-							<a href='../product1/product1.php'><img src='../images/product3.jpg' class='product-thumbnail'></img></a>
-							<a href='../product1/product1.php'>Scarf</a>
-							<span>2 in stock</span>
-							<span>$100.00</span>
-						</div>
-					</div>
+_END;
+}
+?>
 			</div>
 		</div>
 	</body>
-
 </html>
+<?php
+$result->close();
+$conn->close();
+function get_post($conn, $var)
+{
+	return $conn->real_escape_string($_POST[$var]);
+}
+?>
