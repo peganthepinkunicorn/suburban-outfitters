@@ -31,17 +31,16 @@ echo "<h3>Welcome, $username!</h3>";
 				</div>
 			</nav>
 			<div class="page-content">
-				<div class = 'account-info-grid'>
-				<span><h4>Customer Name</h4></span><span><h4>Total Spend</h4></span>
+				<div class = 'user-grid'>
+				<span><h4>Username</h4></span><span><h4>Role</h4></span>
 
 <?php		
 
 $query="SELECT
-	customer.cust_id, f_name, l_name, sum(order_total) AS total_spend
-	FROM customer, cust_order
-	WHERE customer.cust_id = cust_order.cust_id
-	GROUP BY customer.cust_id, f_name, l_name
-	ORDER BY f_name";
+	id, users.username, forename, surname, role
+	FROM users, roles
+	WHERE users.username = roles.username";
+	
 $result=$conn->query($query);
 if(!$result) die ($conn->error);
 
@@ -51,8 +50,13 @@ for($j=0; $j<$rows; $j++) {
 	$row=$result->fetch_array(MYSQLI_BOTH);
 	
 	echo <<<_END
-				<span><a href='viewcustomer.php?cust_id=$row[cust_id]'>$row[f_name]$row[l_name]</a></span>
-				<span>$$row[total_spend]</span>
+				<span><a href='view-user.php?id=$row[id]'>$row[username]</a></span>
+				<span>$row[role]</span>
+				<span><form action="delete-user.php" method="post">
+					<input type="hidden" name="delete" value="yes">
+					<input type="hidden" name="username" value="$row[username]">
+					<input type="submit" value="Delete User"></span>
+				</form>
 _END;
 }
 
