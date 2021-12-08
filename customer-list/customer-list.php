@@ -51,7 +51,7 @@ for($j=0; $j<$rows; $j++) {
 	$row=$result->fetch_array(MYSQLI_BOTH);
 	
 	echo <<<_END
-				<span><a href='viewcustomer.php?cust_id=$row[cust_id]'>$row[f_name]$row[l_name]</a></span>
+				<span><a href='viewcustomer.php?cust_id=$row[cust_id]'>$row[f_name] $row[l_name]</a></span>
 				<span>$$row[total_spend]</span>
 _END;
 }

@@ -32,14 +32,16 @@ echo "<h3>Welcome, $username!</h3>";
 			</nav>
 			<div class="page-content">
 				<div class = 'user-grid'>
-				<span><h4>Username</h4></span><span><h4>Role</h4></span>
+				<a href='create-user.php'>Add New User</a>
+				<span><h4>Username</h4></span><span><h4>Role</h4></span><span></span>
 
 <?php		
 
 $query="SELECT
 	id, users.username, forename, surname, role
 	FROM users, roles
-	WHERE users.username = roles.username";
+	WHERE users.username = roles.username
+	ORDER BY username";
 	
 $result=$conn->query($query);
 if(!$result) die ($conn->error);
@@ -50,11 +52,12 @@ for($j=0; $j<$rows; $j++) {
 	$row=$result->fetch_array(MYSQLI_BOTH);
 	
 	echo <<<_END
-				<span><a href='view-user.php?id=$row[id]'>$row[username]</a></span>
+				<span><a href='view-user.php?user_username=$row[username]'>$row[username]</a></span>
+				<span>Role ID:</span><span> $row[id]</span>
 				<span>$row[role]</span>
 				<span><form action="delete-user.php" method="post">
 					<input type="hidden" name="delete" value="yes">
-					<input type="hidden" name="username" value="$row[username]">
+					<input type="hidden" name="user_username" value="$row[username]">
 					<input type="submit" value="Delete User"></span>
 				</form>
 _END;

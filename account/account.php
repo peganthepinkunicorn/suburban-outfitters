@@ -1,6 +1,6 @@
 <?php
 
-$page_roles = array('admin', 'employee', 'customer');
+$page_roles = array('customer');
 
 require_once '../dbinfo/checksession.php';
 require_once '../dbinfo/user.php';

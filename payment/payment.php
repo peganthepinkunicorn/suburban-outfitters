@@ -196,7 +196,7 @@ if(isset($_POST['pay'])){
 		$line_id = $conn->insert_id;
 		
 		//remove product from inventory
-		$remove_inventory = "insert into inventory (prod_id, cust_id, line_id, store_id, date, quantity, total_cost) values ($prod_id, $cust_id, $line_id, $store_id, '$date', $quantity, $line_total)";
+		$remove_inventory = "insert into inventory (prod_id, cust_id, line_id, store_id, date, quantity) values ($prod_id, $cust_id, $line_id, $store_id, '$date', $quantity)";
 		$result = $conn->query($remove_inventory); 
 		if(!$result) die($conn->error);
 	}
@@ -268,7 +268,7 @@ if(isset($_POST['saved'])){
 		$line_id = $conn->insert_id;
 		
 		//remove product from inventory
-		$remove_inventory = "insert into inventory (prod_id, cust_id, line_id, store_id, date, quantity, total_cost) values ($prod_id, $cust_id, $line_id, $store_id, '$date', $quantity, $line_total)";
+		$remove_inventory = "insert into inventory (prod_id, cust_id, line_id, store_id, date, quantity) values ($prod_id, $cust_id, $line_id, $store_id, '$date', -$quantity)";
 		$result = $conn->query($remove_inventory); 
 		if(!$result) die($conn->error);
 		
