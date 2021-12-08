@@ -53,12 +53,12 @@ for($j=0; $j<$rows; $j++) {
 	
 	echo <<<_END
 				<span><a href='view-user.php?user_username=$row[username]'>$row[username]</a></span>
-				<span>Role ID:</span><span> $row[id]</span>
+				<span>Role ID: $row[id]</span>
 				<span>$row[role]</span>
-				<span><form action="delete-user.php" method="post">
+				<form action="delete-user.php" method="post">
 					<input type="hidden" name="delete" value="yes">
 					<input type="hidden" name="user_username" value="$row[username]">
-					<input type="submit" value="Delete User"></span>
+					<input type="submit" value="Delete User">
 				</form>
 _END;
 }
